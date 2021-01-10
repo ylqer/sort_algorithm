@@ -34,9 +34,6 @@ class Tree(object):
 
     def breadth_travel(self):
         """广度遍历"""
-        if self.root is None:
-            return
-
         queue = [self.root]
         while queue:
             cur_node = queue.pop(0)
@@ -84,7 +81,7 @@ if __name__ == '__main__':
     tree.add(8)
     tree.add(9)
     tree.breadth_travel()
-    print(' ')
+    print('')
     tree.preorder(tree.root)
     print('')
     tree.inorder(tree.root)

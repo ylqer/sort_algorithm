@@ -46,6 +46,7 @@ class SingleCycleLinkList(object):
         node.next = self.__head
         self.__head = node
         cur.next = self.__head
+        return
 
     def append(self, item):
         """链表尾部添加元素"""
@@ -63,6 +64,9 @@ class SingleCycleLinkList(object):
     def insert(self, pos, item):
         """指定位置添加元素"""
         node = Node(item)
+        if pos <= 0:
+            self.add(item)
+            return
         cur = self.__head
         count = 0
         while count < pos - 1:
@@ -73,7 +77,7 @@ class SingleCycleLinkList(object):
 
     def remove(self, item):
         """删除节点"""
-        if self.__head.item == item:
+        if self.__head.elem == item:
             cur = self.__head
             while cur.next is not self.__head:
                 cur = cur.next
@@ -116,3 +120,17 @@ if __name__ == '__main__':
     ll.append(2)
     ll.append(3)
     ll.travel()
+    ll.insert(0, 12)
+    ll.travel()
+    ll.insert(6, 23)
+    ll.travel()
+    print(ll.search(23))
+    print(ll.search(22))
+    ll.remove(100)
+    ll.travel()
+    print(ll.length())
+    ll.remove(12)
+    ll.travel()
+    ll.remove(23)
+    ll.travel()
+    print(ll.length())
