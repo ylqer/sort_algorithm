@@ -1,4 +1,3 @@
-
 class Node(object):
     """结点"""
     def __init__(self, item):
@@ -56,6 +55,7 @@ class DoubleLinkList(object):
 
     def insert(self, pos, item):
         """指定位置添加元素
+        :param item:
         :param pos 从0开始
         """
         if pos <= 0:
